@@ -4,7 +4,7 @@ A Hello Dolly like plugin, but with a terrible French rap song.
 
 ## Use
 
-When activated you will randomly see a lyric from <cite>Hello, Dolly</cite> in the upper right of your admin screen on every page.
+When activated you will randomly see a lyric from <cite>On m'appelle l'ovni</cite> in the upper right of your admin screen on every page.
 
 ## Credits
 
