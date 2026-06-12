@@ -1,11 +1,21 @@
-# hello-ovni
+# Hello l'ovni
 
-A Hello Dolly like plugin, but with a terrible French rap song.
+Une parodie du plugin WordPress [Hello Dolly](https://wordpress.org/plugins/hello-dolly/), mais avec des lignes de _On m'appelle l'OVNI_ de Jul dans l'administration WordPress.
 
-## Use
+Ce plugin est une blague, pas un projet officiel, pas un plugin destiné au répertoire WordPress.org, et surtout pas une bonne idée à activer sur le site d'un client sérieux.
 
-When activated you will randomly see a lyric from <cite>On m'appelle l'ovni</cite> in the upper right of your admin screen on every page.
+## Installation
 
-## Credits
+1. Copiez ce dossier dans `wp-content/plugins/`.
+2. Activez `Hello l'ovni` depuis l'écran des extensions WordPress.
+3. Profitez d'une ligne aléatoire dans le coin supérieur droit de l'admin.
 
-You might want to check the original plugin [Hello Dolly](https://wordpress.org/plugins/hello-dolly/).
+## Crédits et droits
+
+Le code est basé sur l'idée et la structure du plugin original Hello Dolly.
+
+Les paroles citées appartiennent à leurs ayants droit respectifs. Elles sont incluses ici uniquement dans un contexte de parodie / blague personnelle.
+
+## Licence
+
+Le code du plugin est distribué sous licence GPL v2 or later. Voir [LICENSE](LICENSE).

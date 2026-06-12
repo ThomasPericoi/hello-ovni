@@ -3,11 +3,20 @@
 /**
  * Plugin Name: Hello l'ovni
  * Plugin URI: https://thomaspericoi.com/projects/hello-ovni/
- * Description: J'ai "emprunté" le code du plugin de Matt Mullenweg "Hello Dolly" pour en faire quelque chose de bien mieux. Une fois activé, <strong>vous verrez les paroles du chef d'oeuvre "<cite>On m'appelle l'ovni</cite>"</strong> en haut à droite dans votre interface administrateur.
+ * Description: Une parodie de Hello Dolly avec des lignes de "On m'appelle l'ovni" dans l'admin WordPress.
  * Version: 1.0
+ * Requires at least: 5.2
+ * Requires PHP: 7.2
  * Author: Thomas Pericoi
  * Author URI: https://thomaspericoi.com/
+ * License: GPL v2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: hello-ovni
  */
+
+if (!defined('ABSPATH')) {
+	exit;
+}
 
 function hello_ovni_get_lyric()
 {
@@ -50,24 +59,24 @@ function hello_ovni_get_lyric()
 	Non (l'ovni)
 	Je cours après le temps, je suis loin de tout (l'ovni)
 	Que ils parlent de moi, ils me cassent les couilles (l'ovni)
-	Je suis dans l'insomnie (on m’appelle l'ovni)
-	Je suis dans l'insomnie (on m’appelle l'ovni)
-	On m’appelle l'ovni
-	On m’appelle l'ovni
+	Je suis dans l'insomnie (on m'appelle l'ovni)
+	Je suis dans l'insomnie (on m'appelle l'ovni)
+	On m'appelle l'ovni
+	On m'appelle l'ovni
 	Je cours après le temps, je suis loin de tout
 	Que ils parlent de moi, ils me cassent les couilles
-	Je suis dans l'insomnie (on m’appelle l'ovni)
-	Je suis dans l'insomnie (on m’appelle l'ovni)
+	Je suis dans l'insomnie (on m'appelle l'ovni)
+	Je suis dans l'insomnie (on m'appelle l'ovni)
 	Je cours après le temps, je suis loin de tout (l'ovni)
 	Que ils parlent de moi, ils me cassent les couilles (l'ovni)
-	Je suis dans l'insomnie (on m’appelle l'ovni)
-	Je suis dans l'insomnie (on m’appelle l'ovni)
+	Je suis dans l'insomnie (on m'appelle l'ovni)
+	Je suis dans l'insomnie (on m'appelle l'ovni)
 	On m'appelle l'ovni
 	On m'appelle l'ovni
 	On m'appelle l'ovni
 	L'ovni";
 
-	$lyrics = explode("\n", $lyrics);
+	$lyrics = array_map('trim', explode("\n", $lyrics));
 
 	return wptexturize($lyrics[mt_rand(0, count($lyrics) - 1)]);
 }
@@ -82,9 +91,9 @@ function hello_ovni()
 
 	printf(
 		'<p id="ovni"><span class="screen-reader-text">%s </span><span dir="ltr"%s>%s</span></p>',
-		__('Citation de la chanson "On m\appelle l\'ovni :', 'hello-dolly'),
+		esc_html__('Citation de la chanson "On m\'appelle l\'ovni" :', 'hello-ovni'),
 		$lang,
-		$chosen
+		wp_kses_post($chosen)
 	);
 }
 
